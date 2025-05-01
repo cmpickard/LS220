@@ -109,10 +109,10 @@ return result of reduce
 function rooms(times) {
   let firstMinute = Math.min(...times.map(([start, _]) => start));
   let lastMinute = Math.max(...times.map(([_, end]) => end));
-  let allMins = new Array(lastMinute - firstMinute + 1)
+  let allMinutes = new Array(lastMinute - firstMinute + 1)
     .fill()
     .map((_, idx) => idx + firstMinute);
-  return Math.max(...allMins.map(min => meetingsThisMinute(times, min)));
+  return Math.max(...allMinutes.map(min => meetingsThisMinute(times, min)));
 }
 
 function meetingsThisMinute(meetingTimes, minute) {
